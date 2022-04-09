@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Poppins&display=swap');
+
+
+header{
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    width: 100%;
+    position: fixed;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.my-links{
+
+}
+.my-houses{
+    width: 100%;
+    /*display: flex;*/
+}
+
+.my-main{
+    background-color: #000;
+    color: yellowgreen;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: 'Mulish',sans-serif;
+    margin: 3%;
+    /*display: flex;          !*coloca tudo em linha*!*/
+    /*flex-direction: column; !*coloca tudo em coluna*!*/
+    /*align-items: center;    !*alinha horizontalmente*!*/
+    /*justify-content: center;!*alinha tudo verticalmente com uso de height:100vh*!*/
+    /*height: 100vh;*/
+    /*overflow: hidden; !*BARRA DE SCROLL DOWN, HIDDEN ESCONDIDA*!*
+    /*overflow-x: hidden; !*REMOVER BARRA DE SCROLL HORIZONTAL*!*/
+}
+
+.my-btn{
+    margin: 20px;
+}

@@ -1,0 +1,24 @@
+<?xml version='1.0' standalone='yes'?>
+<houses>
+    <house>
+
+        <name>Sanjay Kumar</name>
+        <number>10</number>
+    </house>
+
+    <house>
+
+        <name>Vijay Kumar</name>
+        <number>12</number>
+    </house>
+    <house>
+
+        <name>Ashish Kumar</name>
+        <number>14</number>
+    </house>
+    <house>
+
+        <name>Dhananjay Negi</name>
+        <number>16</number>
+    </house>
+</houses>
