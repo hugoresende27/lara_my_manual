@@ -24,9 +24,9 @@
             <pre>
 $xmlString = file_get_contents($req->input('file'));
 $xmlObject = simplexml_load_string($xmlString);
+$json = json_encode($xml); // convert the XML string to JSON
+$array = json_decode($json,TRUE); // convert the JSON-encoded string to a PHP variable
 
-$json = json_encode($xmlObject);
-$phpArray = json_decode($json, true);
 dd($phpArray);
             </pre>
         </div>
@@ -34,13 +34,21 @@ dd($phpArray);
     </div>
 
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-6">
             <h5>This form will output an array with the xml data</h5>
             <img src="/my_images/ddxml.png" alt="image">
         </div>
 
+
+        <div class="col-md-6">
+            <h5>$json = json_encode($xmlObject);</h5>
+            @if(isset($json))
+                <div>
+
+                    <p>{{$json}}</p>
+
+                </div>
+            @endif
+        </div>
     </div>
-
-
-
 @endsection

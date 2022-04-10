@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish&family=Poppins&display=swap');
 
 
+h5{
+    background-color: yellow;
+    color: #000;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+}
+
 header{
     text-align: center;
     padding: 20px;

@@ -37,7 +37,7 @@
     </div>
 
     <div class="row">
-        <div class="col-6">
+        <div class="col-8">
             <h5>Database data</h5>
 
             <table class="table table-dark">

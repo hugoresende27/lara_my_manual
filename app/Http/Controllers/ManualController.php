@@ -31,6 +31,22 @@ class ManualController extends Controller
 
     }
 
+    public function  addJsonv2()
+    {
+        $data = Manual::all();
+        return view ('manual.addjsonv2', compact('data'));
+    }
+
+    ////////////////////////////  ADD JSON TO DATABASE /////////////////////////////////////////////////////
+    public function storeJsonv2(Request $request)
+    {
+        $product=$request->all();
+        $test['jsontype'] = json_encode($product);
+        $product = Manual::insert($test);
+        return back()->with('success','Data saved successfully!');
+
+    }
+
 
     ////////////////////////////  ADD XML TO DATABASE /////////////////////////////////////////////////////
     public function storeXml(Request $req)
@@ -69,11 +85,12 @@ class ManualController extends Controller
     {
         if($req->isMethod("POST")) {
             $xmlString = file_get_contents($req->input('file'));
-            $xmlObject = simplexml_load_string($xmlString);
 
+            $xmlObject = simplexml_load_string($xmlString);
             $json = json_encode($xmlObject);
             $phpArray = json_decode($json, true);
-            dd($phpArray);
+//            dd(get_defined_vars());
+            return view ('manual.ddxml', compact('json'));
         };
 
         return view ('manual.ddxml');

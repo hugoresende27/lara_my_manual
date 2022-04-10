@@ -21,6 +21,9 @@ use Spatie\Sitemap\SitemapGenerator;
 
 
 Route::get('/', function () {
+    return view('main');
+});
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
@@ -65,6 +68,10 @@ Route::get('/sitemap', function (){
 Route::get('/main',[ManualController::class, 'index']);
 Route::get('/addjson',[ManualController::class, 'addJson']);
 Route::post('/addjson',[ManualController::class, 'storeJson'])->name('add_json');
+
+Route::get('/addjsonv2',[ManualController::class, 'addJsonv2']);
+Route::post('/addjsonv2',[ManualController::class, 'storeJsonv2'])->name('add_jsonv2');
+
 
 
 Route::match(["get", "post"], "/addxml", [\App\Http\Controllers\ManualController::class, "storeXml"])->name('add_xml');
