@@ -14,7 +14,10 @@ class RoomFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'house_id'=>1,
+            'name'=>$this->faker->name(),
+            'size'=>rand(1,999)
+
         ];
     }
 }

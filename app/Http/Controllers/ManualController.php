@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\House;
 use App\Models\Manual;
 use App\Models\Room;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ManualController extends Controller
@@ -96,6 +97,27 @@ class ManualController extends Controller
         return view ('manual.ddxml');
     }
 
+    ////////////////////////////  CONVERT INPUT FILE TO XML /////////////////////////////////////////////////////
+    public function convertToXml()
+    {
+
+        return view ('manual.convert_to_xml');
+    }
+    public function convertToXmlhouse()
+    {
+        $data = House::all();
+        return response()->xml(['house' => $data->toArray()]);
+    }
+    public function convertToXmlroom()
+    {
+        $data = Room::all();
+        return response()->xml(['room' => $data->toArray()]);
+    }
+    public function convertToXmluser()
+    {
+        $data = User::all();
+        return response()->xml(['user' => $data->toArray()]);
+    }
 
     ////////////////////////////  DELETE DATA FROM DATABASE /////////////////////////////////////////////////////
     public function destroy($id)

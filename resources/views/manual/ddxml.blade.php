@@ -45,7 +45,7 @@ dd($phpArray);
             @if(isset($json))
                 <div>
 
-                    <p>{{$json}}</p>
+                        <p>{{$json}}</p>
 
                 </div>
             @endif

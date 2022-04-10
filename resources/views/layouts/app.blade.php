@@ -40,8 +40,8 @@
         @endif
 
             <a href="{{ url()->previous() }}"><button class="btn btn-danger">Back</button></a>
-            <a href="/welcome"><button class="btn btn-primary">Home</button></a>
-            <a href="/"><button class="btn btn-primary">Manual</button></a>
+            <a href="/welcome"><button class="btn btn-dark">Others</button></a>
+            <a href="/"><button class="btn btn-warning" style="width: 200px">Manual</button></a>
 
         @if ($message = Session::get('success'))
             <div class="alert alert-success alert-block">

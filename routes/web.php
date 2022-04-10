@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\ManualController;
 use App\Http\Controllers\PostController;
+use App\Models\Manual;
 use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\SitemapGenerator;
 
@@ -80,3 +81,14 @@ Route::match(["get", "post"], "/addxml", [\App\Http\Controllers\ManualController
 Route::delete('/deldata/{id}',[ManualController::class, 'destroy']);
 
 Route::match(["get", "post"],'/ddxml', [ManualController::class, 'ddXml'])->name('dd_xml');
+
+Route::get('/clientxml', function(){
+    $client = Manual::all();
+    return response()->xml(['client' => $client->toArray()]);
+});
+
+Route::get('/convertxml', [ManualController::class,'convertToXml']);
+Route::get('/convertxmlhouse', [ManualController::class,'convertToXmlhouse']);
+Route::get('/convertxmlroom', [ManualController::class,'convertToXmlroom']);
+Route::get('/convertxmluser', [ManualController::class,'convertToXmluser']);
+

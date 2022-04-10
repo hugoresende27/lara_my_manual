@@ -15,5 +15,5 @@
         <a href="{{route('post.index')}}"><button  class="btn btn-lg btn-success my-btn" >JSON Posts</button></a>
 
         <a href="/sitemap"><button  class="btn btn-lg btn-success my-btn" >Sitemap</button></a>
-
+        <a href="/clientxml"><button  class="btn btn-lg btn-success my-btn" >Convert to XML</button></a>
 @endsection
