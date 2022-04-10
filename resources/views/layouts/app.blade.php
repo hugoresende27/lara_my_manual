@@ -43,6 +43,19 @@
             <a href="/"><button class="btn btn-primary">Home</button></a>
             <a href="/main"><button class="btn btn-primary">Manual</button></a>
 
+        @if ($message = Session::get('success'))
+            <div class="alert alert-success alert-block">
+
+                <strong>{{ $message }}</strong>
+            </div>
+        @endif
+        @if ($message = Session::get('failed'))
+            <div class="alert alert-danger alert-block">
+
+                <strong>{{ $message }}</strong>
+            </div>
+        @endif
+
     </header>
 
     <div class="my-main">

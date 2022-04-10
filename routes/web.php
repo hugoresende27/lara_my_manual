@@ -64,3 +64,12 @@ Route::get('/sitemap', function (){
 
 Route::get('/main',[ManualController::class, 'index']);
 Route::get('/addjson',[ManualController::class, 'addJson']);
+Route::post('/addjson',[ManualController::class, 'storeJson'])->name('add_json');
+
+
+Route::match(["get", "post"], "/addxml", [\App\Http\Controllers\ManualController::class, "storeXml"])->name('add_xml');
+
+
+Route::delete('/deldata/{id}',[ManualController::class, 'destroy']);
+
+Route::match(["get", "post"],'/ddxml', [ManualController::class, 'ddXml'])->name('dd_xml');

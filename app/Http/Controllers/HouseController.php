@@ -13,6 +13,8 @@ class HouseController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+
+
     public function addXml(Request $req)
     {
         if($req->isMethod("POST")){

@@ -1,0 +1,28 @@
+
+<datateste>
+
+    <xmldata>
+
+        <name>Antonio</name>
+        <email>teste@teste</email>
+    </xmldata>
+
+    <xmldata>
+
+        <name>Sara</name>
+        <email>asdad@2asdad</email>
+    </xmldata>
+
+    <xmldata>
+
+        <name>Zecas</name>
+        <email>rrr@asdas</email>
+    </xmldata>
+
+    <xmldata>
+
+        <name>Serafim</name>
+        <email>ppp@pppp</email>
+    </xmldata>
+
+</datateste>

@@ -1,28 +1,28 @@
 
 <rooms>
-    <?php for($i=1; $i<100;$i++) { ?>
+
     <room>
         <house_id>1</house_id>
         <name>Sala Branca</name>
-        <size>10</size>
+        <email>10</email>
     </room>
 
     <room>
         <house_id>1</house_id>
         <name>Sala Azul</name>
-        <size>12</size>
+        <email>12</email>
     </room>
 
     <room>
         <house_id>1</house_id>
         <name>Sala Preta</name>
-        <size>14</size>
+        <email>14</email>
     </room>
 
     <room>
         <house_id>1</house_id>
         <name>Sala Verde</name>
-        <size>16</size>
+        <email>16</email>
     </room>
-    <?php }?>
+
 </rooms>

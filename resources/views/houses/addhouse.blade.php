@@ -6,18 +6,7 @@
 <div class="container" style="margin-top: 50px;">
     <h4 style="text-align: center;">How To Upload And Save XML Data in Laravel 8 - Online Web Tutor</h4>
 
-    @if ($message = Session::get('success'))
-        <div class="alert alert-success alert-block">
 
-            <strong>{{ $message }}</strong>
-        </div>
-    @endif
-    @if ($message = Session::get('failed'))
-        <div class="alert alert-danger alert-block">
-
-            <strong>{{ $message }}</strong>
-        </div>
-    @endif
 
     <form action="{{ route('add-house-xml') }}" id="frm-create-course" method="post">
         @csrf
