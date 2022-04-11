@@ -4,25 +4,25 @@
     <room>
         <house_id>1</house_id>
         <name>Sala Branca</name>
-        <email>10</email>
+        <size>10</size>
     </room>
 
     <room>
         <house_id>1</house_id>
         <name>Sala Azul</name>
-        <email>12</email>
+        <size>12</size>
     </room>
 
     <room>
         <house_id>1</house_id>
         <name>Sala Preta</name>
-        <email>14</email>
+        <size>14</size>
     </room>
 
     <room>
         <house_id>1</house_id>
         <name>Sala Verde</name>
-        <email>16</email>
+        <size>16</size>
     </room>
 
 </rooms>
