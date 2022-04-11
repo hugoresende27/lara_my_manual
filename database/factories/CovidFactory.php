@@ -13,6 +13,7 @@ class CovidFactory extends Factory
      */
     public function definition()
     {
+        $faker = \Faker\Factory::create();
         return [
             //
             'report_date'=>$this->faker->dateTime(),
