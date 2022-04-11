@@ -92,3 +92,6 @@ Route::get('/convertxmlhouse', [ManualController::class,'convertToXmlhouse']);
 Route::get('/convertxmlroom', [ManualController::class,'convertToXmlroom']);
 Route::get('/convertxmluser', [ManualController::class,'convertToXmluser']);
 
+
+Route::get('/manual_api', [ManualController::class,'indexManualApi']);
+

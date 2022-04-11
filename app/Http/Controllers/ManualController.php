@@ -11,6 +11,10 @@ use Illuminate\Http\Request;
 class ManualController extends Controller
 {
 
+    public function indexManualApi()
+    {
+        return view ('manual.indexapi');
+    }
     public function index()
     {
         return view('main');

@@ -42,6 +42,7 @@
             <a href="{{ url()->previous() }}"><button class="btn btn-danger">Back</button></a>
             <a href="/welcome"><button class="btn btn-dark">Others</button></a>
             <a href="/"><button class="btn btn-warning" style="width: 200px">Manual</button></a>
+            <a href="/manual_api"><button class="btn btn-warning" style="width: 200px">API</button></a>
 
         @if ($message = Session::get('success'))
             <div class="alert alert-success alert-block">
