@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
          \App\Models\House::factory(10)->create();
          \App\Models\Room::factory(10)->create();
          \App\Models\User::factory(10)->create();
+         \App\Models\Covid::factory(10)->create();
     }
 }
