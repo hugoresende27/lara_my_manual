@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\CovidController;
 use App\Http\Controllers\AuthorsController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -40,3 +41,6 @@ Route::get('cases', [CovidController::class, 'index']);
 /// USER THAT CREATED BOOKS
 /// //author/{author}
 /// for a specific author
+///
+
+Route::apiResource('/users', UserController::class);

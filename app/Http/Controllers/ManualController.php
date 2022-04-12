@@ -6,11 +6,33 @@ use App\Models\House;
 use App\Models\Manual;
 use App\Models\Room;
 use App\Models\User;
+
 use Illuminate\Http\Request;
 
 class ManualController extends Controller
 {
 
+    public function worldMeter()
+    {
+        $client = new \Goutte\Client();
+        $url = 'https://www.worldometers.info/coronavirus/';
+        $page = $client->request('GET', $url);
+//        dd($page);
+//        echo "<pre>";
+//        print_r($page);
+//        echo $page->filter('.maincounter-number')->text();
+        $page->filter('#maincounter-wrap')->each(function($item){
+            $this->results[$item->filter('h1')->text()]=$item->filter('.maincounter-number')->text();
+        });
+
+
+        $data = $this->results;
+        return view('manual.worldmeter', compact('data'));
+    }
+    public function myNotes()
+    {
+        return view('manual.mynotes');
+    }
     public function indexManualApi()
     {
         return view ('manual.indexapi');

@@ -95,3 +95,9 @@ Route::get('/convertxmluser', [ManualController::class,'convertToXmluser']);
 
 Route::get('/manual_api', [ManualController::class,'indexManualApi']);
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('my_notes',[ ManualController::class,'myNotes']);
+Route::get('worldmeter',[ ManualController::class,'worldMeter']);
