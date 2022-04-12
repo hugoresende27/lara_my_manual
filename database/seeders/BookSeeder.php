@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class AuthorSeeder extends Seeder
+class BookSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +13,6 @@ class AuthorSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Author::factory(10)->create();
+        \App\Models\Book::factory(10)->create();
     }
 }

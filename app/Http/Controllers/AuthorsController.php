@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\AuthorsResource;
 use App\Models\Author;
-use App\Http\Requests\StoreAuthorRequest;
-use App\Http\Requests\UpdateAuthorRequest;
+use App\Http\Requests\AuthorRequest;
+
 
 class AuthorsController extends Controller
 {
@@ -15,7 +16,7 @@ class AuthorsController extends Controller
      */
     public function index()
     {
-        //
+        return AuthorsResource::collection(Author::all());
     }
 
     /**
@@ -31,12 +32,17 @@ class AuthorsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreAuthorRequest  $request
+     * @param  \App\Http\Requests\AuthorRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreAuthorRequest $request)
+    public function store(AuthorRequest $request)
     {
-        //
+        $faker = \Faker\Factory::create(1);
+        $author = Author::create([
+            'name'=>$faker->name()
+        ]);
+
+        return new AuthorsResource(($author));
     }
 
     /**
@@ -47,7 +53,8 @@ class AuthorsController extends Controller
      */
     public function show(Author $author)
     {
-        //
+
+        return new AuthorsResource($author);
     }
 
     /**
@@ -62,15 +69,21 @@ class AuthorsController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     *  the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateAuthorRequest  $request
+     * @param  \App\Http\Requests\AuthorRequest  $request
      * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateAuthorRequest $request, Author $author)
+    public function update(AuthorRequest $request, Author $author)
     {
         //
+
+        $author->update([
+           'name'=>$request->input('name')
+        ]);
+
+        return new AuthorsResource($author);
     }
 
     /**
@@ -81,6 +94,7 @@ class AuthorsController extends Controller
      */
     public function destroy(Author $author)
     {
-        //
+        $author->delete();
+        return response(null, 204);
     }
 }

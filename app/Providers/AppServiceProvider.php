@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        JsonResource::withoutWrapping();///JSON WRAPPER IN DATA OFF //
+//        JsonResource::withoutWrapping();///JSON WRAPPER IN DATA OFF //
         Covid::observe(CovidObserver::class);
 
     }
