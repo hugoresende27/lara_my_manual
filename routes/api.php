@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\CovidController;
 use App\Http\Controllers\AuthorsController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CafeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -44,3 +45,7 @@ Route::get('cases', [CovidController::class, 'index']);
 ///
 
 Route::apiResource('/users', UserController::class);
+
+Route::get('/cafes', [CafeController::class, 'getCafes']);
+Route::get('/cafes/{id}', [CafeController::class, 'getCafe']);
+Route::post('/cafes', [CafeController::class, 'postNewCafe']);

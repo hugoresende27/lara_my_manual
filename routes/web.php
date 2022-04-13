@@ -111,3 +111,6 @@ Route::get('/sitemap', [XmlController::class, 'siteMap']);
 Route::get('/addxmldb', [XmlController::class, 'addXmlDb']);
 Route::post('addxmldb', [XmlController::class, 'storeXml']);
 Route::delete('deletebook/{id}', [XmlController::class, 'delete']);
+
+Route::get('/booksxml', [XmlController::class, 'booksToXml']);
+Route::get('/xmlconverter', [XmlController::class, 'xmlConverter']);

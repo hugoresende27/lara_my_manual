@@ -77,6 +77,39 @@ class XmlController extends Controller
         ]);
     }
 
+    public function booksToXml()
+    {
+        $data = Book::all();
+        return response()->xml(['book' => $data->toArray()]);
+    }
+
+    public function xmlConverter(Request $request)
+    {
+//        dd($request->input('model'));
+        switch ($request->input('model')) {
+            case 1:
+                $data = Book::all();
+                return response()->xml(['book' => $data->toArray()]);
+                break;
+            case 2:
+                $data = User::all();
+                return response()->xml(['user' => $data->toArray()]);
+                break;
+            case 3:
+                $data = House::all();
+                return response()->xml(['house' => $data->toArray()]);
+                break;
+            case 4:
+                $data = Room::all();
+                return response()->xml(['room' => $data->toArray()]);
+                break;
+            default:
+                echo 'ERROR';
+        }
+
+
+    }
+
     public function delete($id)
     {
         $del = Book::find($id);

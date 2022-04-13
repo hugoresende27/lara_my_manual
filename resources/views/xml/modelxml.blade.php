@@ -3,9 +3,33 @@
 @section('content')
     <div class="container">
         <h5>Convert a model to XML</h5>
+
+        <div class="row">
+
+            <div class="col-md-4">
+                <form action="{{url('/xmlconverter')}}" method="GET" class="mb-3 flex">
+
+                    <select class="form-select " aria-label="Default select example" name="model">
+                        <option value=1>Books</option>
+                        <option value=2>Users</option>
+                        <option value="3">Houses</option>
+                        <option value="4">Rooms</option>
+                    </select>
+
+                    <div class="ms-3">
+                        <button type="submit" class="btn btn-success">Convert</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <hr>
         <div class="row">
             <div class="col-md-6" style="max-height: 300px; overflow-y:auto;">
-                    <h5>Books table</h5>
+                <div class="flex">
+                    <h5 class="p-1 ">Books table</h5>
+
+                </div>
                     <table class="table table-dark" >
                         <thead>
                         <tr>
