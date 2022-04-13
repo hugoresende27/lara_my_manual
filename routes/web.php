@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\ManualController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\XmlController;
 use App\Models\Manual;
 use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\SitemapGenerator;
@@ -55,16 +56,16 @@ Route::match(["get", "post"], "read-xml", [\App\Http\Controllers\ReadXmlControll
 
 Route::get('/post', [PostController::class, 'index'])->name('post.index');
 
-Route::get('/sitemap', function (){
-
-    $path= ('sitemap.xml');
-
-    SitemapGenerator::create('http://localhost:8000')->writeToFile($path);
-    return 'sitemap created';
-//    SitemapGenerator::create(URL::to('http://localhost:8000'))->writeToFile(public_path('sitemap.xml'));
+//Route::get('/sitemap', function (){
 //
+//    $path= ('sitemap.xml');
+//
+//    SitemapGenerator::create('http://localhost:8000')->writeToFile($path);
 //    return 'sitemap created';
-});
+////    SitemapGenerator::create(URL::to('http://localhost:8000'))->writeToFile(public_path('sitemap.xml'));
+////
+////    return 'sitemap created';
+//});
 
 Route::get('/main',[ManualController::class, 'index']);
 Route::get('/addjson',[ManualController::class, 'addJson']);
@@ -101,3 +102,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('my_notes',[ ManualController::class,'myNotes']);
 Route::get('worldmeter',[ ManualController::class,'worldMeter']);
+
+Route::get('/xml', [XmlController::class, 'index']);
+Route::get('/sitemap', [XmlController::class, 'siteMap']);
