@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+    <book>
+        <!--        comment-->
+        <name>Sala Branca</name>
+        <description>Valeuuuuuu</description>
+        <publication_year>9999</publication_year>
+    </book>
+    <book>
+        <name>Sala Azul</name>
+        <description>Valeuuuuuu</description>
+        <publication_year>9999</publication_year>
+    </book>
+    <book>
+        <name>Sala Preta</name>
+        <description>Valeuuuuuu</description>
+        <publication_year>9999</publication_year>
+    </book>
+    <book>
+        <name>Sala Verde</name>
+        <description>Valeuuuuuu</description>
+        <publication_year>9999</publication_year>
+    </book>
+</books>

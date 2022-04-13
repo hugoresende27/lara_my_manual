@@ -92,6 +92,7 @@ Route::get('/convertxml', [ManualController::class,'convertToXml']);
 Route::get('/convertxmlhouse', [ManualController::class,'convertToXmlhouse']);
 Route::get('/convertxmlroom', [ManualController::class,'convertToXmlroom']);
 Route::get('/convertxmluser', [ManualController::class,'convertToXmluser']);
+Route::get('/convertxmluser', [ManualController::class,'convertToXmluser']);
 
 
 Route::get('/manual_api', [ManualController::class,'indexManualApi']);
@@ -103,5 +104,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('my_notes',[ ManualController::class,'myNotes']);
 Route::get('worldmeter',[ ManualController::class,'worldMeter']);
 
+
 Route::get('/xml', [XmlController::class, 'index']);
+Route::get('/modeltoxml', [XmlController::class, 'modelXml']);
 Route::get('/sitemap', [XmlController::class, 'siteMap']);
+Route::get('/addxmldb', [XmlController::class, 'addXmlDb']);
+Route::post('addxmldb', [XmlController::class, 'storeXml']);
+Route::delete('deletebook/{id}', [XmlController::class, 'delete']);

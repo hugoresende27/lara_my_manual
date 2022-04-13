@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+    <user>
+<!--        comment-->
+
+        <name>Sala Branca</name>
+        <email>testando@email.xml</email>
+        <password>1111</password>
+    </user>
+    <user>
+
+        <name>Sala Azul</name>
+        <email>testando@email.xml</email>
+        <password>1111</password>
+    </user>
+    <user>
+
+        <name>Sala Preta</name>
+        <email>testando@email.xml</email>
+        <password>1111</password>
+    </user>
+    <user>
+
+        <name>Sala Verde</name>
+        <email>testando@email.xml</email>
+        <password>1111</password>
+    </user>
+</users>

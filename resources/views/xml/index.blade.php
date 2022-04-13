@@ -5,9 +5,12 @@
         <div class="row">
 
             <div class="col-md-4">
-
-                <a href="sitemap" target="_blank"><button class="btn btn-danger">Sitemap</button></a>
-                <a href="https://www.freeformatter.com/" target="_blank"><button class="btn btn-danger">XML formatter</button></a>
+                <ul style="list-style: none">
+                    <li><a href="sitemap" target="_blank"><button class="btn btn-danger">Sitemap</button></a></li>
+                    <li><a href="https://www.freeformatter.com/" target="_blank"><button class="btn btn-danger">XML formatter</button></a></li>
+                    <li><a href="/addxmldb"><button class="btn btn-info">Add XML to DB</button></a></li>
+                    <li><a href="/modeltoxml"><button class="btn btn-info">Convert a Model to XML</button></a></li>
+                </ul>
             </div>
             <div class="col-md-8 bg-light p-3 text-black rounded">
                 <h1>XML = eXtensible Markup Language</h1>

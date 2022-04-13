@@ -45,6 +45,7 @@
             <a href="/manual_api"><button class="btn btn-warning" style="width: 200px">API</button></a>
             <a href="/xml"><button class="btn btn-warning" style="width: 200px">XML</button></a>
 
+            <div id="hideMe">
         @if ($message = Session::get('success'))
             <div class="alert alert-success alert-block">
 
@@ -57,7 +58,7 @@
                 <strong>{{ $message }}</strong>
             </div>
         @endif
-
+            </div>
     </header>
 
     <div class="my-main">
