@@ -4,7 +4,7 @@
 
     <div class="row">
         <div class="col-md-3">
-            <div class="create-task">
+            <div class="create-task mt-3">
                 <div class="screen-task">
                     @if ($errors->any())
                         @foreach ($errors->all() as $error)
@@ -46,13 +46,22 @@
             <div class="row">
 
                     @foreach($tasks as $task)
-                        <div class="col-md-2 show-task m-3 text-center">
+                        <div class="col-md-2 show-task text-center m-3">
                             <p>{{$task->name}}</p>
                             <hr>
                             <p>{{$task->date}}</p>
                             <hr>
                             <p>{{$task->desc}}</p>
-                            <a href="/tasks/{{$task->id}}/edit"><button>Edit</button></a>
+                            <hr>
+                            <div class="flex text-center">
+                                <a href="/tasks/{{$task->id}}/edit"><button class="btn btn-secondary m-1">Edit</button></a>
+                                <form action="/tasks/{{$task->id}}" method="POST">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-danger m-1"  onclick="return confirm('Are u sure?')">Delete</button>
+                                </form>
+
+                            </div>
                         </div>
 
                     @endforeach

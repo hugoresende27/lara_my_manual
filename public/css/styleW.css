@@ -4,12 +4,14 @@
 /*////////////////////////TASKS//////////////////////////////////////*/
 .show-task{
     background-color: yellow;
-    min-height: 200px;
+    height: 300px;
     padding: 10px;
     border-radius: 20px;
     color: #000;
     font-weight: bolder;
     padding: 5px;
+    overflow-wrap: break-word;
+    overflow-y: auto;
 }
 .screen-task{
     background-color: grey;
