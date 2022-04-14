@@ -8,7 +8,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styleW.css">
+    <link rel="stylesheet" href="{{url('css/styleW.css')}}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- Styles -->
     <style>
@@ -41,23 +41,37 @@
 
             <a href="{{ url()->previous() }}"><button class="btn btn-danger">Back</button></a>
             <a href="/welcome"><button class="btn btn-dark">Others</button></a>
-            <a href="/"><button class="btn btn-warning" style="width: 200px">Manual</button></a>
-            <a href="/manual_api"><button class="btn btn-warning" style="width: 200px">API</button></a>
-            <a href="/xml"><button class="btn btn-warning" style="width: 200px">XML</button></a>
+            <a href="/"><button class="btn btn-warning" style="width: 120px">Manual</button></a>
+            <a href="/manual_api"><button class="btn btn-warning" style="width: 120px">API</button></a>
+            <a href="/xml"><button class="btn btn-warning" style="width: 120px">XML</button></a>
+            <a href="/sitemapmanual"><button class="btn btn-warning" style="width: 120px">Sitemap</button></a>
+            <a href="/tasks"><button class="btn btn-warning" style="width: 120px">Tasks</button></a>
 
-            <div id="hideMe">
-        @if ($message = Session::get('success'))
-            <div class="alert alert-success alert-block">
 
-                <strong>{{ $message }}</strong>
-            </div>
-        @endif
-        @if ($message = Session::get('failed'))
-            <div class="alert alert-danger alert-block">
 
-                <strong>{{ $message }}</strong>
-            </div>
-        @endif
+            <div id="hideMe" class="fixed-top">
+{{--                @if ($errors->any())--}}
+{{--                    <div class="alert alert-danger">--}}
+{{--                        <ul>--}}
+{{--                            @foreach ($errors->all() as $error)--}}
+{{--                                <li>{{ $error }}</li>--}}
+{{--                            @endforeach--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                @endif--}}
+
+                @if ($message = Session::get('success'))
+                    <div class="alert alert-success alert-block">
+
+                        <strong>{{ $message }}</strong>
+                    </div>
+                @endif
+                @if ($message = Session::get('failed'))
+                    <div class="alert alert-danger alert-block">
+
+                        <strong>{{ $message }}</strong>
+                    </div>
+                @endif
             </div>
     </header>
 
@@ -68,6 +82,7 @@
 
     </div>
     <footer class="fixed-bottom text-white text-center dark:bg-gray-800 p-3">
+
         @include('layouts.footer')
     </footer>
 </div>

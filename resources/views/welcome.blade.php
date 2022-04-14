@@ -16,4 +16,6 @@
 
         <a href="/sitemap"><button  class="btn btn-lg btn-success my-btn" >Sitemap</button></a>
         <a href="/clientxml"><button  class="btn btn-lg btn-success my-btn" >Convert to XML</button></a>
+
+        <li><a href="sitemap" target="_blank"><button class="btn btn-danger">Sitemap</button></a></li>
 @endsection

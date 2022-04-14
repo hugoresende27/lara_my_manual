@@ -6,7 +6,7 @@
 
             <div class="col-md-4">
                 <ul style="list-style: none">
-                    <li><a href="sitemap" target="_blank"><button class="btn btn-danger">Sitemap</button></a></li>
+
                     <li><a href="https://www.freeformatter.com/" target="_blank"><button class="btn btn-danger">XML formatter</button></a></li>
                     <li><a href="/addxmldb"><button class="btn btn-info">Add XML to DB</button></a></li>
                     <li><a href="/modeltoxml"><button class="btn btn-info">Convert a Model to XML</button></a></li>

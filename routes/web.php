@@ -1,8 +1,13 @@
 <?php
 
 
+use App\Http\Controllers\HouseController;
 use App\Http\Controllers\ManualController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ReadXmlController;
+use App\Http\Controllers\RoomController;
+use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\XmlController;
 use App\Models\Manual;
 use Illuminate\Support\Facades\Route;
@@ -38,34 +43,32 @@ Route::get('/teste', function()
 
 });
 
-Route::get('/house', [\App\Http\Controllers\HouseController::class, 'index']);
-Route::get('/room', [\App\Http\Controllers\RoomController::class, 'index']);
+Route::get('/house', [HouseController::class, 'index']);
+Route::get('/room', [RoomController::class, 'index']);
 
 
 
-Route::get('/samplexml', [\App\Http\Controllers\HouseController::class,'sampleXml']);
-Route::get('/xmltojson', [\App\Http\Controllers\HouseController::class,'xmlToJson']);
-Route::get('/housexml', [\App\Http\Controllers\HouseController::class, 'xmlHouse']);
-Route::get('/addhousexml', [\App\Http\Controllers\HouseController::class, 'addXml']);
-Route::post('/addhousexml', [\App\Http\Controllers\HouseController::class, 'addXml'])->name('add-house-xml');
-Route::get('/addroomxml', [\App\Http\Controllers\RoomController::class, 'addXml']);
-Route::post('/addroomxml', [\App\Http\Controllers\RoomController::class, 'addXml'])->name('add-room-xml');
+Route::get('/samplexml', [HouseController::class,'sampleXml']);
+Route::get('/xmltojson', [HouseController::class,'xmlToJson']);
+Route::get('/housexml', [HouseController::class, 'xmlHouse']);
+Route::get('/addhousexml', [HouseController::class, 'addXml']);
+Route::post('/addhousexml', [HouseController::class, 'addXml'])->name('add-house-xml');
+Route::get('/addroomxml', [RoomController::class, 'addXml']);
+Route::post('/addroomxml', [RoomController::class, 'addXml'])->name('add-room-xml');
 
-Route::match(["get", "post"], "read-xml", [\App\Http\Controllers\ReadXmlController::class, "index"])->name('xml-upload');
+Route::match(["get", "post"], "read-xml", [ReadXmlController::class, "index"])->name('xml-upload');
 
 
 Route::get('/post', [PostController::class, 'index'])->name('post.index');
 
-//Route::get('/sitemap', function (){
-//
-//    $path= ('sitemap.xml');
-//
-//    SitemapGenerator::create('http://localhost:8000')->writeToFile($path);
-//    return 'sitemap created';
-////    SitemapGenerator::create(URL::to('http://localhost:8000'))->writeToFile(public_path('sitemap.xml'));
-////
-////    return 'sitemap created';
-//});
+Route::get('/getsitemap', function (){
+
+    $path= ('sitemap.xml');
+
+    SitemapGenerator::create('http://localhost')->writeToFile($path);
+    return 'sitemap created';
+
+});
 
 Route::get('/main',[ManualController::class, 'index']);
 Route::get('/addjson',[ManualController::class, 'addJson']);
@@ -76,7 +79,7 @@ Route::post('/addjsonv2',[ManualController::class, 'storeJsonv2'])->name('add_js
 
 
 
-Route::match(["get", "post"], "/addxml", [\App\Http\Controllers\ManualController::class, "storeXml"])->name('add_xml');
+Route::match(["get", "post"], "/addxml", [ManualController::class, "storeXml"])->name('add_xml');
 
 
 Route::delete('/deldata/{id}',[ManualController::class, 'destroy']);
@@ -92,7 +95,7 @@ Route::get('/convertxml', [ManualController::class,'convertToXml']);
 Route::get('/convertxmlhouse', [ManualController::class,'convertToXmlhouse']);
 Route::get('/convertxmlroom', [ManualController::class,'convertToXmlroom']);
 Route::get('/convertxmluser', [ManualController::class,'convertToXmluser']);
-Route::get('/convertxmluser', [ManualController::class,'convertToXmluser']);
+
 
 
 Route::get('/manual_api', [ManualController::class,'indexManualApi']);
@@ -114,3 +117,16 @@ Route::delete('deletebook/{id}', [XmlController::class, 'delete']);
 
 Route::get('/booksxml', [XmlController::class, 'booksToXml']);
 Route::get('/xmlconverter', [XmlController::class, 'xmlConverter']);
+
+Route::get('/sitemapmanual', [SitemapController::class ,'indexB']);
+
+Route::get('/sitemapB', [SitemapController::class, 'index']);
+
+
+Route::resource('/tasks', TaskController::class);
+
+
+
+
+
+

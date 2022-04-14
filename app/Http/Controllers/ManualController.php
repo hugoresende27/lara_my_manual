@@ -51,6 +51,7 @@ class ManualController extends Controller
     ////////////////////////////  ADD JSON TO DATABASE /////////////////////////////////////////////////////
     public function storeJson(Request $request)
     {
+
         $data = $request->only('name','email','mobile_number');
         $test['data'] = json_encode($data);
         Manual::insert($test);

@@ -6,7 +6,7 @@
 
         <div class="row">
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <form action="{{url('/xmlconverter')}}" method="GET" class="mb-3 flex">
 
                     <select class="form-select " aria-label="Default select example" name="model">
@@ -20,6 +20,15 @@
                         <button type="submit" class="btn btn-success">Convert</button>
                     </div>
                 </form>
+            </div>
+            <div class="col-md-6">
+                <pre>
+public function xmlConverter
+{
+    $data = Model::all();
+    return response()->xml(['model' => $data->toArray()]);
+}
+                </pre>
             </div>
 
         </div>
