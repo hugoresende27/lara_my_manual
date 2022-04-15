@@ -30,7 +30,6 @@ class AlbumController extends Controller
     {
 
         $album = Album::create($request->all());
-//    dd($album);
         return new AlbumResource( $album);
     }
 
@@ -56,7 +55,6 @@ class AlbumController extends Controller
     public function update(UpdateAlbumRequest $request, Album $album)
     {
         $album->update($request->all());
-
         return new AlbumResource( $album);
     }
 
