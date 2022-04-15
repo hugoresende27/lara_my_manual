@@ -13,7 +13,7 @@ class ImageManipulation extends Model
 
     const TYPE_RESIZE = 'resize';
 
-    const UPDATED_AT = false;
+    const UPDATED_AT = null;
 
 
 }
