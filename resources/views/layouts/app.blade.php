@@ -47,6 +47,7 @@
             <a href="/xml"><button class="btn btn-warning" style="width: 120px">XML</button></a>
             <a href="/sitemapmanual"><button class="btn btn-warning" style="width: 120px">Sitemap</button></a>
             <a href="/tasks"><button class="btn btn-warning" style="width: 120px">Tasks</button></a>
+            <a href="/image_api"><button class="btn btn-warning" style="min-width: 220px">Image Manipulation API</button></a>
 
 
 

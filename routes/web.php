@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HouseController;
 use App\Http\Controllers\ManualController;
 use App\Http\Controllers\PostController;
@@ -124,6 +125,8 @@ Route::get('/sitemapB', [SitemapController::class, 'index']);
 
 
 Route::resource('/tasks', TaskController::class);
+
+Route::get('image_api', [HomeController::class, 'imageApi']);
 
 
 

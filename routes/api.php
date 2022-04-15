@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AlbumApi\AlbumController;
+use App\Http\Controllers\AlbumApi\ImageManipulationController;
 use App\Http\Controllers\Api\CovidController;
 use App\Http\Controllers\AuthorsController;
 use App\Http\Controllers\BookController;
@@ -49,3 +51,14 @@ Route::apiResource('/users', UserController::class);
 Route::get('/cafes', [CafeController::class, 'getCafes']);
 Route::get('/cafes/{id}', [CafeController::class, 'getCafe']);
 Route::post('/cafes', [CafeController::class, 'postNewCafe']);
+
+
+Route::prefix('v1')->group(function () {
+    Route::apiResource('album', AlbumController::class);
+    Route::get('image', [ImageManipulationController::class,'index']);
+    Route::get('image/{image}', [ImageManipulationController::class,'show']);
+    Route::post('image/resize', [ImageManipulationController::class,'resize']);
+    Route::get('image/by-album/{album}', [ImageManipulationController::class,'byAlbum']);
+    Route::delete('image/{album}', [ImageManipulationController::class,'destroy']);
+});
+

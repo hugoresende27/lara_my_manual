@@ -13,7 +13,9 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth', ['except'=>[
+            'imageApi'
+        ]]);
     }
 
     /**
@@ -24,5 +26,10 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function imageApi()
+    {
+        return view ('image_api.index');
     }
 }
