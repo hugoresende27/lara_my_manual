@@ -53,12 +53,15 @@ Route::get('/cafes/{id}', [CafeController::class, 'getCafe']);
 Route::post('/cafes', [CafeController::class, 'postNewCafe']);
 
 
-Route::prefix('v1')->group(function () {
-    Route::apiResource('album', AlbumController::class);
-    Route::get('image', [ImageManipulationController::class,'index']);
-    Route::get('image/{image}', [ImageManipulationController::class,'show']);
-    Route::post('image/resize', [ImageManipulationController::class,'resize']);
-    Route::get('image/by-album/{album}', [ImageManipulationController::class,'byAlbum']);
-    Route::delete('image/{image}', [ImageManipulationController::class,'destroy']);
+Route::middleware('auth:sanctum')->group(function(){
+    Route::prefix('v1')->group(function () {
+        Route::apiResource('album', AlbumController::class);
+        Route::get('image', [ImageManipulationController::class,'index']);
+        Route::get('image/{image}', [ImageManipulationController::class,'show']);
+        Route::post('image/resize', [ImageManipulationController::class,'resize']);
+        Route::get('image/by-album/{album}', [ImageManipulationController::class,'byAlbum']);
+        Route::delete('image/{image}', [ImageManipulationController::class,'destroy']);
+    });
 });
+
 
