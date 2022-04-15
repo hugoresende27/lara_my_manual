@@ -1,33 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish&family=Poppins&display=swap');
 
 
-/*////////////////////////TASKS//////////////////////////////////////*/
-.show-task{
-    background-color: yellow;
-    height: 300px;
-    padding: 10px;
-    border-radius: 20px;
-    color: #000;
-    font-weight: bolder;
-    padding: 5px;
-    overflow-wrap: break-word;
-    overflow-y: auto;
-}
-.screen-task{
-    background-color: grey;
-    margin-top: 10px;
-    min-height: 200px;
-    color: #000;
-    font-weight: bolder;
-    font-size: 1.3rem;
-    padding: 5px;
 
-}
-.create-task{
-    background-color: darkblue;
-    min-height: 500px;
-    padding: 10px;
-    border-radius: 5%;
+/*//////////////////////////////////////////////////////////////*/
+h6{
+    background-color: yellow;
+    color: #000;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
 }
 li{
     margin: 5px 0;
@@ -116,4 +97,34 @@ header{
         height:0;
         visibility:hidden;
     }
+}
+
+
+/*////////////////////////TASKS//////////////////////////////////////*/
+.show-task{
+    background-color: yellow;
+    height: 300px;
+    padding: 10px;
+    border-radius: 20px;
+    color: #000;
+    font-weight: bolder;
+    padding: 5px;
+    overflow-wrap: break-word;
+    overflow-y: auto;
+}
+.screen-task{
+    background-color: grey;
+    margin-top: 10px;
+    min-height: 200px;
+    color: #000;
+    font-weight: bolder;
+    font-size: 1.3rem;
+    padding: 5px;
+
+}
+.create-task{
+    background-color: darkblue;
+    min-height: 500px;
+    padding: 10px;
+    border-radius: 5%;
 }

@@ -126,7 +126,10 @@ Route::get('/sitemapB', [SitemapController::class, 'index']);
 
 Route::resource('/tasks', TaskController::class);
 
-Route::get('image_api', [HomeController::class, 'imageApi']);
+
+Route::get('image_api1', [HomeController::class, 'imageApi']);
+Route::get('image_api2', [HomeController::class, 'imageApi2']);
+
 
 
 

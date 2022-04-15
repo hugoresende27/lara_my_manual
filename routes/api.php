@@ -59,6 +59,6 @@ Route::prefix('v1')->group(function () {
     Route::get('image/{image}', [ImageManipulationController::class,'show']);
     Route::post('image/resize', [ImageManipulationController::class,'resize']);
     Route::get('image/by-album/{album}', [ImageManipulationController::class,'byAlbum']);
-    Route::delete('image/{album}', [ImageManipulationController::class,'destroy']);
+    Route::delete('image/{image}', [ImageManipulationController::class,'destroy']);
 });
 

@@ -4,6 +4,14 @@
 
     <h1>Image Manipulation Api</h1>
     <div class="row">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/image_api1">Routes | Album Controller/Resource</a>
+            <a class="navbar-brand" href="/image_api2">Image Controller | Resize Function</a>
+            <a class="navbar-brand" href="/">Demo</a>
+        </nav>
+    </div>
+    <hr>
+    <div class="row">
         <div class="col-md-6">
             <h5>Routes api.php</h5>
             <pre>
