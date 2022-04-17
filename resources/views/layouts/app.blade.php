@@ -61,6 +61,7 @@
             <a href="/tasks"><button class="btn btn-warning" style="width: 120px">Tasks</button></a>
             <a href="/image_api1"><button class="btn btn-warning" style="min-width: 220px">Image Manipulation API</button></a>
             <a href="/token-gen"><button class="btn btn-warning">Token Generator</button></a>
+            <a href="/rss-feed"><button class="btn btn-warning">RSS Feed</button></a>
 
 
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\ManualController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ReadXmlController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\RssFeedController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\XmlController;
@@ -133,9 +134,17 @@ Route::get('image_api2', [HomeController::class, 'imageApi2']);
 Route::get('/token-gen', [HomeController::class, 'tokenGen']);
 Route::post('/token-gen/create', [HomeController::class, 'createToken']);
 
+Route::get('/rss-feed', [RssFeedController::class, 'index']);
+Route::get('/rss-feed/feed', [RssFeedController::class, 'feed']);
+Route::get('/rss-feed-b', [RssFeedController::class,'generate_rss_feed'])->name('file');
 
 
 
 
 
 
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

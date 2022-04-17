@@ -20,6 +20,7 @@
         "orchestra/parser": "*",
         "spatie/laravel-ray": "^1.29",
         "spatie/laravel-sitemap": "^6.1",
+        "tcg/voyager": "^1.5",
         "weidner/goutte": "^2.1"
     },
     "require-dev": {
