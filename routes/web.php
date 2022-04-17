@@ -134,7 +134,8 @@ Route::get('/token-gen', [HomeController::class, 'tokenGen']);
 Route::post('/token-gen/create', [HomeController::class, 'createToken']);
 
 
-
+// In routes/web.php
+Route::feeds();
 
 
 
