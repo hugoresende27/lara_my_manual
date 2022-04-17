@@ -29,7 +29,19 @@
         @if (Route::has('login'))
             <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                 @auth
-                    <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                    <a href="{{ url('/home') }}" class="text-white">Home</a>
+
+                    <a class="text-white" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+
+
                 @else
                     <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
 
@@ -48,6 +60,7 @@
             <a href="/sitemapmanual"><button class="btn btn-warning" style="width: 120px">Sitemap</button></a>
             <a href="/tasks"><button class="btn btn-warning" style="width: 120px">Tasks</button></a>
             <a href="/image_api1"><button class="btn btn-warning" style="min-width: 220px">Image Manipulation API</button></a>
+            <a href="/token-gen"><button class="btn btn-warning">Token Generator</button></a>
 
 
 

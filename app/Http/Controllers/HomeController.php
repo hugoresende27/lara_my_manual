@@ -39,18 +39,12 @@ class HomeController extends Controller
         return view ('image_api.index2');
     }
 
-    public function dashboard(Request $request)
+    public function tokenGen(Request $request)
     {
         $user = $request->user();
-
-        return view('image_api.dashboard', [
+        return view ('tokengen.index', [
             'tokens' => $user->tokens
         ]);
-    }
-
-    public function showTokenForm ()
-    {
-        return view('image_api.token-create');
     }
 
     public function createToken(Request $request)
@@ -63,17 +57,12 @@ class HomeController extends Controller
         $user = $request->user();
         $token = $user->createToken($tokenName);
 
-        return view('token-show', [
-            'tokenName' => $tokenName,
-            'token' => $token->plainTextToken
+        dd($token);
+//        dd(get_defined_vars());
+        return view ('tokengen.index', [
+            'tokens' => $user->tokens,
+
         ]);
     }
 
-    public function deleteToken(PersonalAccessToken $token)
-    {
-        $token->delete();
-
-        return redirect('image_api.dashboard');
-
-    }
 }

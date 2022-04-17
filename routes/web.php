@@ -130,6 +130,9 @@ Route::resource('/tasks', TaskController::class);
 Route::get('image_api1', [HomeController::class, 'imageApi']);
 Route::get('image_api2', [HomeController::class, 'imageApi2']);
 
+Route::get('/token-gen', [HomeController::class, 'tokenGen']);
+Route::post('/token-gen/create', [HomeController::class, 'createToken']);
+
 
 
 
